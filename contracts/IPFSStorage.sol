@@ -43,9 +43,9 @@ contract IPFSStorage {
     Multihash memory entry = Multihash(_digest, _hashFunction, _size);
     entries[msg.sender] = entry;
     EntrySet(
-      msg.sender, 
-      _digest, 
-      _hashFunction, 
+      msg.sender,
+      _digest,
+      _hashFunction,
       _size
     );
   }
@@ -71,6 +71,19 @@ contract IPFSStorage {
   returns(bytes32 digest, uint8 hashfunction, uint8 size)
   {
     Multihash storage entry = entries[_address];
+    return (entry.digest, entry.hashFunction, entry.size);
+  }
+
+  /**
+   * @dev retrieve multihash entry associated with an address
+   * @param _address address used as key
+   */
+  function getEntryMemory(address _address)
+  public
+  view
+  returns(bytes32 digest, uint8 hashfunction, uint8 size)
+  {
+    Multihash memory entry = entries[_address];
     return (entry.digest, entry.hashFunction, entry.size);
   }
 }

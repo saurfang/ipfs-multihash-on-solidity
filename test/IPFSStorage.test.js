@@ -68,4 +68,11 @@ contract('IPFSStorage', (accounts) => {
   it('should prevent clearing non-exists entry', async () => {
     await assertRevert(ipfsStorage.clearEntry());
   });
+
+  it('test gas', async () => {
+    await setIPFSHash(accounts[0], ipfsHashes[0]);
+
+    console.log(await ipfsStorage.getEntry.estimateGas(accounts[0]));
+    console.log(await ipfsStorage.getEntryMemory.estimateGas(accounts[0]));
+  });
 });
