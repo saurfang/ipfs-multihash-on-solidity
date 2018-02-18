@@ -1,0 +1,44 @@
+{
+  "name": "ipfs-multihash-on-solidity",
+  "version": "0.0.1",
+  "description": "Example how to store IPFS multihash in smart contract written with Solidity",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saurfang/ipfs-multihash-on-solidity"
+  },
+  "main": "src/multihash.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "truffle test",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:sol": "solium -d .",
+    "lint:sol:fix": "solium -d . --fix",
+    "lint:all": "npm run lint && npm run lint:sol",
+    "lint:all:fix": "npm run lint:fix && npm run lint:sol:fix"
+  },
+  "keywords": [
+    "multihash",
+    "ipfs",
+    "solidity"
+  ],
+  "author": "Forest Fang <forest.fang@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bs58": "^4.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.18.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "solium": "^1.1.5",
+    "truffle": "^4.0.6"
+  }
+}
