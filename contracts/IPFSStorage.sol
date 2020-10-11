@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.5.16;
 
 
 /**
@@ -42,7 +42,7 @@ contract IPFSStorage {
   {
     Multihash memory entry = Multihash(_digest, _hashFunction, _size);
     entries[msg.sender] = entry;
-    EntrySet(
+    emit EntrySet(
       msg.sender, 
       _digest, 
       _hashFunction, 
@@ -58,7 +58,7 @@ contract IPFSStorage {
   {
     require(entries[msg.sender].digest != 0);
     delete entries[msg.sender];
-    EntryDeleted(msg.sender);
+    emit EntryDeleted(msg.sender);
   }
 
   /**
