@@ -27,6 +27,7 @@
   "author": "Forest Fang <forest.fang@outlook.com>",
   "license": "MIT",
   "dependencies": {
+    "8": "0.0.1",
     "bs58": "^4.0.1"
   },
   "devDependencies": {
